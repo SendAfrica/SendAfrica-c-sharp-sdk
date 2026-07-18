@@ -7,7 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
 
     <PackageId>SendAfrica</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>SendAfrica</Authors>
     <Description>Official C# SDK for the SendAfrica SMS &amp; Payments API</Description>
     <PackageTags>sms;africa;tanzania;payments;mobile-money;api</PackageTags>
@@ -16,6 +16,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>1.0.1: README corrections only (package is now live on nuget.org; the 1.0.0 README incorrectly still said it wasn't published yet). No code changes.</PackageReleaseNotes>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>

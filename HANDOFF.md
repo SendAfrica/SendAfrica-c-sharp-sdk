@@ -55,9 +55,11 @@ it doesn't charge anything by itself.
 - [ ] **CLI tool** — the Python SDK ships a `sendafrica` CLI command
       (balance checks, quick sends from the terminal). Not ported here;
       would need its own packaging as a .NET global tool if wanted.
-- [ ] **NuGet publish ownership** — who holds the nuget.org API key and
-      account for the `SendAfrica` package ID. Confirm the ID isn't already
-      taken.
+- [x] **NuGet publish ownership** — resolved 2026-07-18. The `SendAfrica`
+      package ID was unclaimed and is now published under the `Prosaic`
+      nuget.org account, first as v1.0.0 then v1.0.1. Whoever holds that
+      account's login is who can publish future versions or grant others
+      push access via a scoped API key.
 
 ## Important: how live testing must be done from here on
 

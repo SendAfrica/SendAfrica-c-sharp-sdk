@@ -55,11 +55,10 @@ expected. Treat these three features as "should work, but please verify
 before you depend on them in a real application." See
 [HANDOFF.md](HANDOFF.md) for the exact list of what still needs checking.
 
-**This package is not yet published to nuget.org.** The instructions below
-under [Installing the package](#installing-the-package) describe how it will
-be installed once it is published. Until then, if you want to use it today,
-see [Building and testing locally](#building-and-testing-locally) for how to
-build it yourself and reference it from a local folder.
+**This package is published on nuget.org** and installable the normal way —
+see [Installing the package](#installing-the-package) below. If you'd
+rather build from source instead (for example, to try unreleased changes),
+see [Building and testing locally](#building-and-testing-locally).
 
 ## Requirements
 
@@ -73,8 +72,7 @@ build it yourself and reference it from a local folder.
 
 ## Installing the package
 
-Once this package is published to nuget.org, you will be able to install it
-with the .NET command-line tool:
+Install it with the .NET command-line tool:
 
 ```bash
 dotnet add package SendAfrica
@@ -88,10 +86,10 @@ manager instead:
 3. Search for "SendAfrica".
 4. Click "Install".
 
-As noted above in [Current status](#current-status), this package has not
-been published yet, so neither of these will work today. Until it is
-published, use the local build steps in
-[Building and testing locally](#building-and-testing-locally) instead.
+The package page itself is at
+[nuget.org/packages/SendAfrica](https://www.nuget.org/packages/SendAfrica),
+if you want to browse the listing, check the current version, or see
+download stats.
 
 ## Getting an API key
 
@@ -526,9 +524,9 @@ automatically based on your project.
 
 ## Building and testing locally
 
-Since this package is not yet published to nuget.org (see
-[Current status](#current-status)), here is how to use it directly from
-source in the meantime.
+The published package on nuget.org covers normal usage — you only need this
+section if you want to try unreleased changes from source, or you're
+contributing to the SDK itself.
 
 First, clone the repository and build it:
 
@@ -601,10 +599,13 @@ launched a different way.
 
 **Why does `dotnet add package SendAfrica` say the package cannot be
 found?**
-Because it has not been published to nuget.org yet — see
-[Current status](#current-status) and
-[Building and testing locally](#building-and-testing-locally) for how to
-use it in the meantime.
+Double-check the package ID is spelled exactly `SendAfrica` and that your
+project isn't restricted to a private/offline NuGet feed that doesn't
+include nuget.org. If you want to rule out nuget.org itself, the package
+listing is at
+[nuget.org/packages/SendAfrica](https://www.nuget.org/packages/SendAfrica) —
+if that page loads and shows a version, the package is live and the issue
+is local to your project's NuGet configuration.
 
 **Can I use this SDK from a synchronous, non-async codebase?**
 Technically yes, by calling `.Result` or `.GetAwaiter().GetResult()` on the
