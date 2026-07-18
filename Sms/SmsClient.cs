@@ -8,7 +8,7 @@ namespace SendAfrica.Sms
     /// <summary>SMS operations for the SendAfrica API.</summary>
     public class SmsClient
     {
-        // TODO(API): confirm the real endpoint path against the SendAfrica API docs.
+        // Confirmed against the live API on 2026-07-18.
         private const string SendPath = "v1/sms";
 
         private readonly HttpClient _httpClient;
@@ -43,11 +43,11 @@ namespace SendAfrica.Sms
                 throw new SendAfricaApiException(response.StatusCode, body);
             }
 
-            SmsResponse? result = await response.Content
-                .ReadFromJsonAsync<SmsResponse>(cancellationToken: cancellationToken)
+            SendAfricaEnvelope<SmsResponse>? envelope = await response.Content
+                .ReadFromJsonAsync<SendAfricaEnvelope<SmsResponse>>(cancellationToken: cancellationToken)
                 .ConfigureAwait(false);
 
-            return result ?? new SmsResponse();
+            return envelope?.Data ?? new SmsResponse();
         }
     }
 }

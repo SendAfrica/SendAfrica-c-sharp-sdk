@@ -11,7 +11,7 @@ namespace SendAfrica
     /// </summary>
     public class SendAfricaClient : IDisposable
     {
-        // TODO(API): confirm the real base URL with SendAfrica. Placeholder only.
+        // Confirmed against the live API on 2026-07-18.
         internal const string DefaultBaseUrl = "https://api.sendafrica.online";
 
         private readonly HttpClient _httpClient;
@@ -56,8 +56,8 @@ namespace SendAfrica
                 _httpClient.BaseAddress = new Uri(baseUrl ?? DefaultBaseUrl);
             }
 
-            // TODO(API): confirm the actual auth scheme expected by the SendAfrica API.
-            // Bearer-token auth is assumed here as the conventional default.
+            // Confirmed against the live API on 2026-07-18: the server accepts the key via
+            // either "Authorization: Bearer <key>" or "X-API-Key: <key>". Bearer is used here.
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
 
             Sms = new SmsClient(_httpClient);
